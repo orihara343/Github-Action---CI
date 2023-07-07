@@ -1,5 +1,4 @@
 name: devops pra for flask
-name: Test Flask Server
 on: push
 
 jobs:
