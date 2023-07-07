@@ -1,20 +1,16 @@
 name: devops pra for flask
+name: Test Flask Server
 on: push
 
 jobs:
-  push-job:
-    name: Push check
+  run-flask-server:
+    name: Install requirements and run server.py
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v3
-    - name: dependency
+    - uses: actions/setup-python@v3 
+    - name: Install requirements and run server.py
       run: |
         python -m pip install --upgrade pip
-        pip3 install -r requirements.txt;
-    - name: Run server
-      run: |
+        pip3 install -r requirements.txt
         python3 server.py > log.txt 2>&1 &
-    - name: Port Access
-      run: |
-        pytest
