@@ -31,3 +31,4 @@ jobs:
           context: .
           push: true
           tags: orihara343/ntc_test:latest
+          
